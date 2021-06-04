@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import { io } from "socket.io-client";
@@ -12,13 +12,10 @@ function App() {
   const socket = io("http://localhost:3001");
   socket.connect();
 
-  useEffect(() => {
-    socket.on("comment", (data) => {
-      console.log('react data =>', data);
-      setAllComments([...allComments, data]);
-      setUserId(data.userId);
-    });
-  }, [comment]);
+  socket.on("comment", (data) => {
+    setAllComments([...allComments, data]);
+    setUserId(data.userId);
+  });
 
   const fieldName = (value) => {
     setName(value);
@@ -51,12 +48,11 @@ function App() {
       })
   };
 
-
   return (
     <div className="App">
       <h1>Tchat</h1>
       {allComments.map(comment => (
-        <div>
+        <div key={comment.userId}>
           <p>{comment.name}</p>
           <p>{comment.email}</p>
           <p>{comment.comment}</p>
