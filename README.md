@@ -40,15 +40,7 @@ npm i
 npm start
 ```
 
-Installation des dépendances et lancement du back
-
-```sh
-cd server
-npm i
-npm start
-```
-
-Modification du client pour la connection avec la database dans le fichier app.js du dossier server
+Modification du client pour la connection avec la database dans le fichier index.js du dossier server
 
 ```code
 const client = new Client({
@@ -58,4 +50,12 @@ const client = new Client({
   password: 'password',
   port: 5432,
 });
+```
+
+Installation des dépendances et lancement du back
+
+```sh
+cd server
+npm i
+npm start
 ```
