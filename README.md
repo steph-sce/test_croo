@@ -47,3 +47,15 @@ cd server
 npm i
 npm start
 ```
+
+Modification du client pour la connection avec la database dans le fichier app.js du dossier server
+
+```code
+const client = new Client({
+  user: 'dbuser',
+  host: 'localhost',
+  database: 'tchat',
+  password: 'password',
+  port: 5432,
+});
+```
