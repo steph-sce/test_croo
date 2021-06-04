@@ -9,12 +9,12 @@ Cloner le dépot.
 
 __*Partie SQL*__
 
-> Créer de la base tchat avec psql
+> Créer la database tchat avec psql
 ```sql
 CREATE DATABASE <nom de la base> OWNER <nom du owner>;
 ```
 
-> Créer les tables users et comment
+> Créer les tables user et comment
 ```sql
 CREATE TABLE "user" (
    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
